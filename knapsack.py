@@ -21,18 +21,13 @@ def fractional_knsapsack(items,capacity):
     total_value=0
     for weight,value in items:
         if capacity>=weight:
-            print(value)
             total_value+=value
             capacity-=weight
         else:
             pass
     return total_value
-print("Enter the number of items:")
-N = int(input().strip())
-print("Enter the knapsack capacity:")
-W = float(input().strip())
+N, W = map(lambda x: int(float(x)), input().strip().split())
 items = []
-print(f"Enter {N} pairs of weight and value (format: weight value):")
 for _ in range(N):
     weight, value = map(float, input().strip().split())
     items.append((weight, value))
